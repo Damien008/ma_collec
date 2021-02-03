@@ -30,7 +30,8 @@
                 <td>{{ movie.synopsis }}</td>
                 <td>{{ movie.country }}</td>
                 <td>{{ movie.support }}</td>
-                <td>{{ movie.duration ? movie.duration|date('Y-m-d') : '' }}</td>
+                <td>{{ movie.releaseDate ? movie.releaseDate|date('d-m-Y') : '' }}</td>
+                <td>{{ movie.duration }}</td>
                 <td>{{ movie.trailer }}</td>
                 <td>
                     <a href="{{ path('movie_show', {'id': movie.id}) }}">show</a>
