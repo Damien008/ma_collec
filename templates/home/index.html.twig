@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Accueil • Ma-Collec{% endblock %}</title>
+</head>
+<body>
+
+{% block body %}
+    <p>Bonjour et bienvenue sur Ma-Collec</p>
+    <p>Votre VidéoThèque en ligne</p>
+        
+        {% if app.user %}
+                <button type="submit"><a href="{{ path('movie_index') }}">Entrer</a></button>
+                <a href="{{ path('app_logout') }}">Déconnexion</a>  
+        {% else %}
+                <buttontype="submit"><a href="{{ path('app_login') }}">S'identifier</a></button>
+                <a href="{{ path('app_register') }}">Pas encore inscrit ? Créez un compte !</a>
+            </div>
+        {% endif %}
+
+{% endblock %}
+
+
+</body>
+</html>
