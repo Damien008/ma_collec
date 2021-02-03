@@ -50,7 +50,7 @@ class Movie
     /**
      * @ORM\Column(type="date")
      */
-    private $duration;
+    private $releaseDate;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -61,6 +61,11 @@ class Movie
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="movies")
      */
     private $owner;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $duration;
 
     public function getId(): ?int
     {
@@ -139,14 +144,14 @@ class Movie
         return $this;
     }
 
-    public function getDuration(): ?\DateTimeInterface
+    public function getReleaseDate(): ?\DateTimeInterface
     {
-        return $this->duration;
+        return $this->releaseDate;
     }
 
-    public function setDuration(\DateTimeInterface $duration): self
+    public function setReleaseDate(\DateTimeInterface $releaseDate): self
     {
-        $this->duration = $duration;
+        $this->releaseDate = $releaseDate;
 
         return $this;
     }
@@ -171,6 +176,18 @@ class Movie
     public function setOwner(?User $owner): self
     {
         $this->owner = $owner;
+
+        return $this;
+    }
+
+    public function getDuration(): ?string
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(string $duration): self
+    {
+        $this->duration = $duration;
 
         return $this;
     }
