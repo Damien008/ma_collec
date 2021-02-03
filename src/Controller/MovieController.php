@@ -36,6 +36,7 @@ class MovieController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $movie->setOwner($this->getUser());
             $entityManager->persist($movie);
             $entityManager->flush();
 
