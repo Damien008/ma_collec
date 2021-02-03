@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Movie;
 use App\Form\MovieType;
+use App\Form\SearchTitleType;
 use App\Repository\MovieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,12 +17,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class MovieController extends AbstractController
 {
     /**
-     * @Route("/", name="movie_index", methods={"GET"})
+     * @Route("/", name="movie_index")
      */
-    public function index(MovieRepository $movieRepository): Response
+    public function index(Request $request, MovieRepository $movieRepository): Response
     {
+        $form = $this->createForm(SearchTitleType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData()['search'];
+            $movies = $movieRepository->findLikeTitle($search);
+        } else {
+            $movies = $movieRepository->findAll();
+        }
+
         return $this->render('movie/index.html.twig', [
-            'movies' => $movieRepository->findAll(),
+            'form' => $form->createView(),
+            'movies' => $movies,
         ]);
     }
 

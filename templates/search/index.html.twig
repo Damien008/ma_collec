@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SearchController!{% endblock %}
+
+{% block body %}
+    {{ form_start(searchForm) }}
+        {{ form_row(searchForm.genre) }}
+        {{ form_row(searchForm.country) }}
+        {{ form_row(searchForm.support) }}
+        <button>Rechercher</button>
+    {{ form_end(searchForm) }}
+
+    {% for movie in movies %}
+        {{movie.title}}
+        {{movie.poster}}
+        {{movie.genre}}
+        {{movie.synopsis}}
+        {{movie.country}}
+        {{movie.duration}}
+        {{ movie.releaseDate ? movie.releaseDate|date('d-m-Y') : '' }}
+        {{movie.support}}
+        {{movie.trailer}}
+    {% endfor %}
+{% endblock %}

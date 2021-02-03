@@ -3,20 +3,19 @@
 namespace App\Form;
 
 use App\Entity\Movie;
+use App\Service\SearchMovie;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class MovieType extends AbstractType
+class SearchMovieType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('poster')
             ->add('genre', ChoiceType::class, [
+                'required' => false,
                 'choices' => [
                     'Drame' => 'Drame',
                     'Science-Fiction' => 'Science-Fiction',
@@ -30,9 +29,9 @@ class MovieType extends AbstractType
                     'Comédie Romantique' => 'Comédie Romantique',
                 ]
             ])
-            ->add('synopsis')
             ->add('country')
             ->add('support', ChoiceType::class, [
+                'required' => false,
                 'choices' => [
                     'DVD' => 'DVD',
                     'Blu-Ray' => 'Blu-Ray',
@@ -41,18 +40,15 @@ class MovieType extends AbstractType
                     'Divx' => 'Divx',
                 ]
             ])
-            ->add('releaseDate', DateType::class, [
-                'widget' => 'single_text',
-            ])
-            ->add('duration')
-            ->add('trailer')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Movie::class,
+            'data_class' => SearchMovie::class,
+            'method' => 'GET',
+            'csrf_protection' => false,
         ]);
     }
 }
