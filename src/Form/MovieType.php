@@ -18,9 +18,9 @@ class MovieType extends AbstractType
             ->add('synopsis')
             ->add('country')
             ->add('support')
+            ->add('releaseDate')
             ->add('duration')
             ->add('trailer')
-            ->add('owner')
         ;
     }
 
