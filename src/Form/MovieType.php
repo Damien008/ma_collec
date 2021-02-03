@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Movie;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,10 +16,31 @@ class MovieType extends AbstractType
         $builder
             ->add('title')
             ->add('poster')
-            ->add('genre')
+            ->add('genre', ChoiceType::class, [
+                'choices' => [
+                    'Drame' => 'Drame',
+                    'Science-Fiction' => 'Science-Fiction',
+                    'Aventure' => 'Aventure',
+                    'Comédie' => 'Comédie',
+                    'Western' => 'Western',
+                    'Horreur' => 'Horreur',
+                    'Policier' => 'Policier',
+                    'Catastrophe' => 'Catastrophe',
+                    'Action' => 'Action',
+                    'Comédie Romantique' => 'Comédie Romantique',
+                ]
+            ])
             ->add('synopsis')
             ->add('country')
-            ->add('support')
+            ->add('support', ChoiceType::class, [
+                'choices' => [
+                    'DVD' => 'DVD',
+                    'Blu-Ray' => 'Blu-Ray',
+                    'Blu-Ray 4K' => 'Blu-Ray 4K',
+                    'Blu-Ray 3D' => 'Blu-Ray 3D',
+                    'Divx' => 'Divx',
+                ]
+            ])
             ->add('releaseDate', DateType::class, [
                 'widget' => 'single_text',
             ])
