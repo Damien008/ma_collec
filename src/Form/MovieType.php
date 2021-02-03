@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Movie;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,7 +19,9 @@ class MovieType extends AbstractType
             ->add('synopsis')
             ->add('country')
             ->add('support')
-            ->add('releaseDate')
+            ->add('releaseDate', DateType::class, [
+                'widget' => 'single_text',
+            ])
             ->add('duration')
             ->add('trailer')
         ;
