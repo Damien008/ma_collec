@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Movie;
+use App\Service\SearchMovie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -19,32 +20,38 @@ class MovieRepository extends ServiceEntityRepository
         parent::__construct($registry, Movie::class);
     }
 
-    // /**
-    //  * @return Movie[] Returns an array of Movie objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function searchMovie(SearchMovie $search): array
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $query = $this->createQueryBuilder('m');
 
-    /*
-    public function findOneBySomeField($value): ?Movie
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        if (!empty($search->genre)) {
+            $query = $query
+            ->andWhere('m.genre = :genre')
+            ->setParameter('genre', $search->genre);
+        }
+
+        if (!empty($search->country)) {
+            $query = $query
+            ->andWhere('m.country = :country')
+            ->setParameter('country', $search->country);
+        }
+
+        if (!empty($search->support)) {
+            $query = $query
+            ->andWhere('m.support = :support')
+            ->setParameter('support', $search->support);
+        }
+
+        return $query->getQuery()->getResult();
     }
-    */
+
+    public function findLikeTitle(string $name)
+    {
+        $query = $this->createQueryBuilder('m')
+            ->where('m.title LIKE :name')
+            ->setParameter('name', '%' . $name . '%')
+            ->orderBy('m.title', 'ASC');
+
+        return $query->getQuery()->getResult();
+    }
 }
