@@ -4,6 +4,10 @@
 
 {% block body %}
     <h1>Movie index</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button>Rechercher</button>
+    {{ form_end(form) }}
 
     <table class="table">
         <thead>
