@@ -3,52 +3,56 @@
 {% block title %}Movie{% endblock %}
 
 {% block body %}
-    <h1>Movie</h1>
+    {% if app.user %}
+        <h1>Movie</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Title</th>
-                <td>{{ movie.title }}</td>
-            </tr>
-            <tr>
-                <th>Poster</th>
-                <td><img src="{{ movie.poster }}"></td>
-            </tr>
-            <tr>
-                <th>Genre</th>
-                <td>{{ movie.genre }}</td>
-            </tr>
-            <tr>
-                <th>Synopsis</th>
-                <td>{{ movie.synopsis }}</td>
-            </tr>
-            <tr>
-                <th>Country</th>
-                <td>{{ movie.country }}</td>
-            </tr>
-            <tr>
-                <th>Support</th>
-                <td>{{ movie.support }}</td>
-            </tr>
-            <tr>
-                <th>Durée</th>
-                <td>{{ movie.duration}} min</td>
-            </tr>
-            <tr>
-                <th>Release Date</th>
-                <td>{{ movie.releaseDate ? movie.releaseDate|date('d-m-Y') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Trailer</th>
-                <td>{{ movie.trailer }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ movie.title }}</td>
+                </tr>
+                <tr>
+                    <th>Poster</th>
+                    <td><img src="{{ movie.poster }}"></td>
+                </tr>
+                <tr>
+                    <th>Genre</th>
+                    <td>{{ movie.genre }}</td>
+                </tr>
+                <tr>
+                    <th>Synopsis</th>
+                    <td>{{ movie.synopsis }}</td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td>{{ movie.country }}</td>
+                </tr>
+                <tr>
+                    <th>Support</th>
+                    <td>{{ movie.support }}</td>
+                </tr>
+                <tr>
+                    <th>Durée</th>
+                    <td>{{ movie.duration}} min</td>
+                </tr>
+                <tr>
+                    <th>Release Date</th>
+                    <td>{{ movie.releaseDate ? movie.releaseDate|date('d-m-Y') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Trailer</th>
+                    <td>{{ movie.trailer }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('movie_index') }}">back to list</a>
+        <a href="{{ path('movie_index') }}">back to list</a>
 
-    <a href="{{ path('movie_edit', {'id': movie.id}) }}">edit</a>
+        <a href="{{ path('movie_edit', {'id': movie.id}) }}">edit</a>
 
-    {{ include('movie/_delete_form.html.twig') }}
+        {{ include('movie/_delete_form.html.twig') }}
+    {% else %}
+        <p>Veuillez créer un compte pour commencer à créer votre Vidéothèque<p>
+    {% endif %}
 {% endblock %}
