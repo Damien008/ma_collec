@@ -1,9 +1,0 @@
-<a href="{{path('movie_index')}}">Home</a>
-<a href="{{path('search')}}">Recherche</a>
-<a href="{{path('movie_new')}}">Ajouter un film</a>
-{% if app.user %}
-    {{ app.user.pseudo }}
-    <a href="{{ path('app_logout') }}"> Se déconnecter</a>
-{% else %}
-    <a href="{{ path('app_login') }}"> Se connecter</a>
-{% endif %}

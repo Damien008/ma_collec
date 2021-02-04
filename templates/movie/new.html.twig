@@ -4,11 +4,43 @@
 
 {% block body %}
     {% if app.user %}
-        <h1>Create new Movie</h1>
+        <div class="blockNew">
+            <h1 class="newTitle">Créer un film</h1>
+            <div class="newForm">
+                {{ form_start(form)}}
+                    <div class="newItem">
+                        {{ form_row(form.title) }}
+                    </div>
+                   <div class="newItem">
+                        {{ form_row(form.releaseDate) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.genre) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.poster) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.synopsis) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.country) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.support) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.duration) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.trailer) }}
+                    </div>
+                    <div class="newItem">
+                        {{ form_row(form.save) }}
+                    </div>
+                {{ form_end(form)}}
+        </div>
 
-        {{ include('movie/_form.html.twig') }}
-
-        <a href="{{ path('movie_index') }}">back to list</a>
     {% else %}
         <p>Veuillez créer un compte pour commencer à créer votre Vidéothèque<p>
     {% endif %}

@@ -4,18 +4,25 @@ namespace App\Form;
 
 use App\Entity\Movie;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class MovieType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('poster')
+            ->add('title', TextType::class, [
+                'label' => "Titre"
+            ])
+            ->add('poster', TextType::class, [
+                'label' => "Affiche"
+            ])
             ->add('genre', ChoiceType::class, [
                 'choices' => [
                     'Drame' => 'Drame',
@@ -30,8 +37,10 @@ class MovieType extends AbstractType
                     'Comédie Romantique' => 'Comédie Romantique',
                 ]
             ])
-            ->add('synopsis')
-            ->add('country')
+            ->add('synopsis', TextareaType::class)
+            ->add('country', TextType::class, [
+                'label' => "Pays"
+            ])
             ->add('support', ChoiceType::class, [
                 'choices' => [
                     'DVD' => 'DVD',
@@ -43,9 +52,17 @@ class MovieType extends AbstractType
             ])
             ->add('releaseDate', DateType::class, [
                 'widget' => 'single_text',
+                'label' => 'Date de sortie'
             ])
-            ->add('duration')
-            ->add('trailer')
+            ->add('duration', TextType::class, [
+                'label' => "Durée (en minutes)"
+            ])
+            ->add('trailer', TextType::class, [
+                'label' => 'Trailer (lien Youtube uniquement)'
+            ])
+            ->add('save', SubmitType::class, [
+                'label' => 'Enregistrer',
+            ]);
         ;
     }
 
