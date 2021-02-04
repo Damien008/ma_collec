@@ -28,8 +28,9 @@ class Movie
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
-    private ?string $poster;
+    private $poster;
 
     /**
      * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
@@ -79,6 +80,7 @@ class Movie
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @var Datetime
      */
     private $updatedAt;
 
@@ -104,7 +106,7 @@ class Movie
         return $this->poster;
     }
 
-    public function setPoster(string $poster): self
+    public function setPoster(?string $poster): self
     {
         $this->poster = $poster;
 
@@ -211,7 +213,7 @@ class Movie
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {
-            $this->updatedAt = new DateTime('now');
+            $this->updatedAt = new \DateTime('now');
         }
         return $this;
     }
