@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="/build/app.css">
@@ -15,7 +16,27 @@
     </head>
     <body>
     <header>
-        {% include 'navbar.html.twig' %}
+        {% block navabar%}
+            <p class="title">Ma-Collec</p>
+            
+            <nav class="blockNavbar">
+                <ul class="navbar">
+
+                        <li><a class="buttonHome" href="{{path('movie_index')}}">Home</a></li>
+                    
+                        <li><a class="buttonSearch" href="{{path('search')}}">Recherche</a></li>
+                    
+                        <li><a class="buttonAdd" href="{{path('movie_new')}}">Ajouter un film</a></li>
+                   
+                        {% if app.user %}
+                            <li><a class="buttonConnect" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                        {% else %}
+                            <li><a class="buttonConnect" href="{{ path('app_login') }}">Se connecter</a></li>
+                        {% endif %}
+                    
+                </ul>
+            </nav>
+        {% endblock %}
     </header>    
         {% block body %}{% endblock %}
     </body>

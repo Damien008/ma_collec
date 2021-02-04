@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Accueil • Ma-Collec{% endblock %}</title>
-</head>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="/build/app.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="/build/app.js"></script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
 <body>
 
 {% block body %}
-    <p>Bonjour et bienvenue sur Ma-Collec</p>
-    <p>Votre VidéoThèque en ligne</p>
-        
+    <div class="blockBienvenue">
+        <p>Bonjour et bienvenue sur Ma-Collec</p>
+        <p>Votre VidéoThèque en ligne</p>
+    </div>
+
+    <div class="homepageLogin">
         {% if app.user %}
+            <div class="buttonSubmit">
                 <button type="submit"><a href="{{ path('movie_index') }}">Entrer</a></button>
-                <a href="{{ path('app_logout') }}">Déconnexion</a>  
+                <a href="{{ path('app_logout') }}">Déconnexion</a> 
+            </div> 
         {% else %}
-                <buttontype="submit"><a href="{{ path('app_login') }}">S'identifier</a></button>
+            <div class="buttonSubmit">
+                <buttontype type="submit"><a href="{{ path('app_login') }}">S'identifier</a></button>
+            </div>
                 <a href="{{ path('app_register') }}">Pas encore inscrit ? Créez un compte !</a>
             </div>
         {% endif %}
-
+    </div>
+    
 {% endblock %}
 
 

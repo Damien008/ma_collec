@@ -1,22 +1,53 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="/build/app.css">
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
 
-{% block title %}Register{% endblock %}
+        {% block javascripts %}
+            <script src="/build/app.js"></script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+    <div class="blockRegister">
+        <div class="registerForm">
+            {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %}
 
-    <h1>Register</h1>
+            <h1 class="registerTitle">Création du compte</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Inscription</button>
-    {{ form_end(registrationForm) }}
+        <div class="containerRegisterForm">
+            {{ form_start(registrationForm) }}
+                <div class="registerItem">
+                    {{ form_row(registrationForm.email) }}
+                </div>
+                <div class="registerItem">
+                    {{ form_row(registrationForm.pseudo) }}
+                </div>
+                <div class="registerItem">
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                </div>
+                <div class="registerItem">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+                <div class="registerItem">
+                     {{ form_row(registrationForm.save) }}
+                </div>
+            {{ form_end(registrationForm) }}
+        </div>
+        </div>
+    </div>
 {% endblock %}
+    </body>
+</html>

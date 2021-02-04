@@ -13,12 +13,12 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
     const MOVIES = [
         'Interstellar' => [
                             'poster' => 'https://fr.web.img6.acsta.net/r_1920_1080/img/7f/51/7f51b3953bc3b09665c8c3229d030777.jpg',
-                            'genre' => 'Science Fiction',
+                            'genre' => 'Science-Fiction',
                             'synopsis' => 'Le film raconte les aventures d’un groupe d’explorateurs qui utilisent une faille récemment découverte dans l’espace-temps afin de repousser les limites humaines et partir à la conquête des distances astronomiques dans un voyage interstellaire.',
                             'country' => 'USA',
                             'support' => 'Blu-ray',
                             'releaseDate' => '11/04/2014',
-                            'trailer' => 'https://www.youtube.com/watch?v=VaOijhK3CRU',
+                            'trailer' => 'https://www.youtube.com/embed/VaOijhK3CRU',
                             'duration' => '169'                   
         ],
         'Garden State' => [
@@ -31,17 +31,17 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
                             'country' => 'USA',
                             'support' => 'DVD',
                             'releaseDate' => '04/20/2005',
-                            'trailer' => 'https://www.youtube.com/watch?v=u82n0e1mgmQ',
+                            'trailer' => 'https://www.youtube.com/embed/u82n0e1mgmQ',
                             'duration' => '102'                   
         ],
         'Avengers: Infinity War' => [
                             'poster' => 'https://fr.web.img4.acsta.net/r_1920_1080/img/de/24/de24c825038e8c15130e28957fd5a833.jpg',
-                            'genre' => 'Drame',
+                            'genre' => 'Science-Fiction',
                             'synopsis' => 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers.',
                             'country' => 'USA',
                             'support' => 'Blu-ray 4K',
                             'releaseDate' => '04/25/2018',
-                            'trailer' => 'https://www.youtube.com/watch?v=eIWs2IUr3Vs',
+                            'trailer' => 'https://www.youtube.com/embed/eIWs2IUr3Vs',
                             'duration' => '156'                   
         ],
         'Avatar' => [
@@ -52,9 +52,19 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
                             'country' => 'USA',
                             'support' => 'Blu-ray 3D',
                             'releaseDate' => '12/16/2009',
-                            'trailer' => 'https://www.youtube.com/watch?v=O1CzgULNRGs',
+                            'trailer' => 'https://www.youtube.com/embed/O1CzgULNRGs',
                             'duration' => '162'                   
         ],
+        'Ready Player One' => [
+                            'poster' => 'https://fr.web.img4.acsta.net/r_1920_1080/img/c0/d0/c0d0e716c6ef5d46f68185f3972ae846.jpg',
+                            'genre' => 'Scince-Fiction',
+                            'synopsis' => '2045. Le monde est au bord du chaos. Les êtres humains se réfugient dans l\'OASIS, univers virtuel mis au point par le brillant et excentrique James Halliday. Avant de disparaître, celui-ci a décidé de léguer son immense fortune à quiconque découvrira l\'œuf de Pâques numérique qu\'il a pris soin de dissimuler dans l\'OASIS. L\'appât du gain provoque une compétition planétaire. Mais lorsqu\'un jeune garçon, Wade Watts, qui n\'a pourtant pas le profil d\'un héros, décide de participer à la chasse au trésor, il est plongé dans un monde parallèle à la fois mystérieux et inquiétant…',
+                            'country' => 'USA',
+                            'support' => 'Blu-ray 4K',
+                            'releaseDate' => '03/28/2018',
+                            'trailer' => 'https://www.youtube.com/embed/oYGkAMHCOC4',
+                            'duration' => '140'                   
+],
     ];
 
     public function getDependencies()

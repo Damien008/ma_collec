@@ -1,4 +1,507 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "ArchitectsDaughter-Regular";
+    src:url("../Fonts/ArchitectsDaughter-Regular.ttf") format("truetype");
+}
+
 body {
-    background-color: #01152A;
-    color: white;   
+    background-color: #394651;
+    color: white;  
+    font-family: "ArchitectsDaughter-Regular" ,impact , helvetica , arial, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+//NAVBAR
+
+.title {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    height: 60%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+}
+%button {
+    border-radius: 2rem;
+    background: linear-gradient(145deg, #0d449e, #0f51bb);
+    box-shadow:  22px 22px 100px #082e69,
+                 -22px -22px 100px #146af5;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+.buttonHome {
+    @extend %button;
+}
+
+.buttonSearch {
+    @extend %button;
+}
+
+.buttonAdd {
+    @extend %button;
+}
+
+.buttonConnect {
+    @extend %button;
+}
+
+//HOME
+
+.blockBienvenue {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+}
+
+.buttonSubmit {
+    border-radius: 62px;
+    background: linear-gradient(145deg, #0d449e, #0f51bb);
+    box-shadow:  22px 22px 100px #082e69,
+                 -22px -22px 100px #146af5;
+    width: 10%;
+    text-align: center;
+    padding: 1% 0%;
+    margin: 1%;
+}
+
+.homepageLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10%;
+}
+
+//REGISTER
+
+.registerTitle {
+    text-align: center;
+    padding: 5%;
+}
+
+.containerRegisterForm {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+.registerItem  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.registerItem {
+    padding: 5px;
+}
+
+//LOGIN
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+}
+
+.loginTitleForm {
+    align-self: center;
+    margin: 1%;
+}
+
+.loginItemEmail {
+    align-self: center;
+    text-align: center;
+    margin: 1%;
+}
+
+.loginItemPassword {
+    align-self: center;
+    text-align: center;
+    margin: 1%;
+}
+
+.loginItemButton {
+    align-self: center;
+    padding: 1%;
+}
+
+//SEARCH
+
+.blockSearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1%;
+}
+
+.searchTitle {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.searchItem div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    padding: 1%;
+}
+
+.searchItem input{
+    width: 30vh;
+}
+
+.searchItem select {
+    width: 30vh;
+}
+
+
+//NEW MOVIE
+
+.newTitle {
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+.blockNew {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.newItem div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    padding: 1%;
+}
+
+.newItem input {
+    width: 30vh;
+}
+
+.newItem select {
+    width: 30vh;
+}
+
+.newItem textarea {
+    width: 30vh;
+    height: 15vh;
+}
+
+//MOVIE INDEX
+
+.blockMovie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.movieBlu {
+    display: grid;
+    text-align: center;
+    padding: 5%;
+}
+
+.movieBlu img {
+    width: 200px;
+    height: 300px;
+    padding-top: 5%;   
+}
+
+.movieBlu a {
+    
+    box-shadow: 5px 5px 5px rgba(29, 29, 168, 0.685);
+    background-color: rgba(29, 29, 168, 0.685);
+    border-radius: 5%;
+}
+
+.movieDvd {
+    display: grid;
+    text-align: center;
+    padding: 5%;
+}
+
+.movieDvd img {
+    width: 200px;
+    height: 300px;
+    padding-top: 5%; 
+}
+
+.movieDvd a {
+    
+    box-shadow: 5px 5px 5px rgb(177, 31, 31);
+    background-color: rgb(177, 31, 31);
+    border-radius: 5%;
+}
+
+.movie4K {
+    display: grid;
+    text-align: center;
+    padding: 5%;
+}
+
+.movie4K img {
+    width: 200px;
+    height: 300px;
+    padding-top: 5%; 
+}
+
+.movie4K a {
+    
+    box-shadow: 5px 5px 5px black;
+    background-color: black;
+    border-radius: 5%;
+}
+
+.movie3D {
+    display: grid;
+    text-align: center;
+    padding: 5%;
+}
+
+.movie3D img {
+    width: 200px;
+    height: 300px;
+    padding-top: 5%; 
+}
+
+.movie3D a {
+    
+    box-shadow: 5px 5px 5px rgba(241, 150, 13, 0.685);
+    background-color: rgba(241, 150, 13, 0.685);
+    border-radius: 5%;
+}
+
+.movieDivx {
+    display: grid;
+    text-align: center;
+    padding: 2%;
+}
+
+.movieDivx img {
+    width: 200px;
+    height: 300px;
+    padding-top: 5%; 
+}
+
+.movieDivx a {
+    
+    box-shadow: 5px 5px 5px rgba(24, 134, 29, 0.685);
+    background-color: rgba(24, 134, 29, 0.685);
+    border-radius: 5%;
+}
+
+.blockSearchTitle {
+    text-align: center;
+}
+
+
+//MOVIE SHOW
+
+.movieShow {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+}
+.movieShowLeft {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.movieShowRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.movieShowRight div{
+    padding-left: 5%;
+    padding-top: 1%;
+}
+
+.showItem img {
+    width: 300px;
+    height: 450px;
+}
+
+.showTitle {
+    text-align: center;
+    font-size: 10vh;
+}
+
+.movieEdit {
+    text-align: center;
+}
+
+.movieEdit button {
+    width: 30vh;
+}
+.movieDelete {
+    text-align: center;
+}
+
+.movieDelete button {
+    width: 30vh;
+}
+
+//RESPONSIVE
+@media (max-width: 768px){
+
+    //MOVIE INDEX
+    .blockMovie {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .movieBlu {
+        padding: 5%;
+    }
+    
+    .movieBlu img {
+        width: 300px;
+        height: 450px;
+        padding-top: 5%;   
+    }
+ 
+    .movieDvd {
+        padding: 5%;
+    }
+    
+    .movieDvd img {
+        width: 300px;
+        height: 450px;
+        padding-top: 5%; 
+    }
+  
+    .movie4K {
+        padding: 5%;
+    }
+    
+    .movie4K img {
+        width: 300px;
+        height: 450px;
+        padding-top: 5%; 
+    }
+    
+    .movie3D {
+        padding: 5%;
+    }
+    
+    .movie3D img {
+        width: 300px;
+        height: 450px;
+        padding-top: 5%; 
+    }
+    
+    .movieDivx {
+        padding: 2%;
+    }
+    
+    .movieDivx img {
+        padding-top: 5%; 
+    }
+
+    //HOME
+    .blockBienvenue {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        height: 30vh;
+    }
+    
+    .buttonSubmit {
+        width: 30%;
+        margin: 5%;
+    }
+
+    //MOVIE SHOW
+
+    .movieShow {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2%;
+    }
+    
+    .movieShowLeft {
+        display: flex;
+        align-items: center;
+    }
+
+    .movieShowRight {
+        display: flex;
+        align-items: center;
+    }
+    
+    .showTitle {
+        text-align: center;
+        font-size: 5vh;
+    }
+    
+    .showItem iframe {
+        width: 350px;
+        height: 200px;
+    }
+
+    //NAVBAR
+    %button {
+        background-size: contain;
+        background-position: center;
+        width: 0;
+        height: 3rem;
+        padding: 0 0 0 3rem;
+        overflow: hidden;
+    }
+    
+    .buttonHome {
+        background-image: url("../icons/maison.png");
+        
+    }
+    .buttonSearch {
+        background-image: url("../icons/loupe.png");
+    }
+    
+    .buttonAdd {
+        background-image: url("../icons/crayon.png");
+    }
+    
+    .buttonConnect {
+        background-image: url("../icons/deco.png");
+    }
 }
