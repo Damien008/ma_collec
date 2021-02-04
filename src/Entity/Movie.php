@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\MovieRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MovieRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=MovieRepository::class)
+ * @Vich\Uploadable
  */
 class Movie
 {
@@ -23,9 +27,15 @@ class Movie
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $poster;
+    private ?string $poster;
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var File
+     */
+    private $posterFile;
 
     /**
      * @ORM\Column(type="string", length=55)
@@ -66,6 +76,11 @@ class Movie
      * @ORM\Column(type="string", length=20)
      */
     private $duration;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -188,6 +203,32 @@ class Movie
     public function setDuration(string $duration): self
     {
         $this->duration = $duration;
+
+        return $this;
+    }
+
+    public function setPosterFile(File $posterFile = null):Movie
+    {
+        $this->posterFile = $posterFile;
+        if ($posterFile) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
