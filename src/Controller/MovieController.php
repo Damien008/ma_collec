@@ -99,9 +99,7 @@ class MovieController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$movie->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($movie);
-            $entityManager->flush();
-
-            
+            $entityManager->flush();   
         }
 
         return $this->redirectToRoute('movie_index');
