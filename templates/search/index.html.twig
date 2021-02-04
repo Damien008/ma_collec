@@ -26,41 +26,41 @@
                 {% if movie.support == 'Blu-ray' %}
                     <div class="movieBlu">
                         <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ movie.poster }}">
+                            <img src="{{'/uploads/' ~ movie.poster   }}">
                         </a>
                     </div>
                 {% endif %}
                 {% if movie.support == 'DVD' %}
                     <div class="movieDvd">
                         <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ movie.poster }}">
+                            <img src="{{'/uploads/' ~ movie.poster   }}">
                         </a>
                     </div>
                 {% endif %}
                 {% if movie.support == 'Blu-ray 4K' %}
                     <div class="movie4K">
                         <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ movie.poster }}">
+                            <img src="{{'/uploads/' ~ movie.poster   }}">
                         </a> 
                     </div>
                 {% endif %}
                 {% if movie.support == 'Blu-ray 3D' %}
                     <div class="movie3D">
                         <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ movie.poster }}">
+                            <img src="{{'/uploads/' ~ movie.poster   }}">
                         </a> 
                     </div>
                 {% endif %}
                 {% if movie.support == 'Divx' %}
                     <div class="movieDivx">
                         <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ movie.poster }}">
+                            <img src="{{'/uploads/' ~ movie.poster   }}">
                         </a> 
                     </div>
                 {% endif %}
             {% else %}
                 
-                    <td colspan="10">no records found</td>
+                   <p>no records found</p>
                 
             {% endfor %}
         </div>

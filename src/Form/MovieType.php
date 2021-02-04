@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Movie;
 use Symfony\Component\Form\AbstractType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -20,8 +21,10 @@ class MovieType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => "Titre"
             ])
-            ->add('poster', TextType::class, [
-                'label' => "Affiche"
+            ->add('posterFile', VichFileType::class, [
+                'required'      => false,
+                'allow_delete'  => false, // not mandatory, default is true
+                'download_uri' => false, // not mandatory, default is true
             ])
             ->add('genre', ChoiceType::class, [
                 'choices' => [
