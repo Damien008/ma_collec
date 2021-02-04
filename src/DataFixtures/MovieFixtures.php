@@ -64,7 +64,81 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
                             'releaseDate' => '03/28/2018',
                             'trailer' => 'https://www.youtube.com/embed/oYGkAMHCOC4',
                             'duration' => '140'                   
-],
+        ],
+        'Les 4 Fantastiques' => [
+                            'poster' => 'https://fr.web.img5.acsta.net/r_1920_1080/medias/nmedia/18/35/53/30/18435143.jpg',
+                            'genre' => 'Scince-Fiction',
+                            'synopsis' => 'Reed Richards s\'apprête à explorer le cœur du cosmos pour percer les mystères de nos origines. A ses côtés : l\'astronaute Ben Grimm, son ex-compagne Sue Storm et le pilote casse-cou Jimmy Storm.
+                            Au cours de leur mission, la station spatiale s\'engouffre dans un nuage de particules radioactives. Les codes génétiques des quatre astronautes en sont altérés à jamais...',
+                            'country' => 'USA',
+                            'support' => 'Divx',
+                            'releaseDate' => '07/20/2005',
+                            'trailer' => 'https://www.youtube.com/embed/m9gy3NRmZPk',
+                            'duration' => '110'                   
+        ],
+        'Million Dollar Baby' => [
+                            'poster' => 'https://fr.web.img4.acsta.net/r_1920_1080/img/69/78/6978ea86a369f9c023ee70bb6c47e805.jpg',
+                            'genre' => 'Drame',
+                            'synopsis' => 'Rejeté depuis longtemps par sa fille, l\'entraîneur Frankie Dunn s\'est replié sur lui-même et vit dans un désert affectif, en évitant toute relation qui pourrait accroître sa douleur et sa culpabilité.
+                            Le jour où Maggie Fitzgerald, 31 ans, pousse la porte de son gymnase à la recherche d\'un coach, elle n\'amène pas seulement avec elle sa jeunesse et sa force, mais aussi une
+                            histoire jalonnée d\'épreuves et une exigence, vitale et urgente : monter sur le ring, entraînée par Frankie, et enfin concrétiser le rêve d\'une vie.
+                            Après avoir repoussé plusieurs fois sa demande, Frankie se laisse convaincre par l\'inflexible détermination de la jeune femme. Une relation mouvementée, tour à tour stimulante et exaspérante, se noue entre eux, au fil de laquelle Maggie et l\'entraîneur se découvrent une communauté d\'esprit et une complicité inattendues...',
+                            'country' => 'USA',
+                            'support' => 'Blu-ray',
+                            'releaseDate' => '03/23/2005',
+                            'trailer' => 'https://www.youtube.com/embed/krz9U4ZrGog',
+                            'duration' => '132'                   
+        ],
+        'Mais où est donc passé la 7e compagnie' => [
+                                'poster' => 'https://medias.unifrance.org/medias/169/245/128425/format_page/media.jpg',
+                                'genre' => 'Comédie',
+                                'synopsis' => 'Pendant la débâcle française de 1940, la 7ème compagnie se réfugie dans les bois. Mais, elle est prise en embuscade par l\'armée allemande. Seuls trois hommes partis en éclaireur en réchappent. Ils se retrouvent livrés à eux-mêmes dans une France occupée.',
+                                'country' => 'France',
+                                'support' => 'DVD',
+                                'releaseDate' => '12/13/1973',
+                                'trailer' => 'https://www.youtube.com/embed/3Ob1XwvGC1A',
+                                'duration' => '91'                   
+        ],
+        'Batman V Superman' => [
+                                'poster' => 'https://fr.web.img2.acsta.net/r_1920_1080/pictures/16/02/03/11/17/130929.jpg',
+                                'genre' => 'Scince-Fiction',
+                                'synopsis' => 'Craignant que Superman n\'abuse de sa toute-puissance, le Chevalier noir décide de l\'affronter : le monde a-t-il davantage besoin d\'un super-héros aux pouvoirs sans limite ou d\'un justicier à la force redoutable mais d\'origine humaine ? Pendant ce temps-là, une terrible menace se profile à l\'horizon…',
+                                'country' => 'USA',
+                                'support' => 'Blu-ray',
+                                'releaseDate' => '03/23/2016',
+                                'trailer' => 'https://www.youtube.com/embed/rW4ZaR2Jndg',
+                                'duration' => '180'                   
+        ],
+        'Retour vers le futur' => [
+                                'poster' => 'https://fr.web.img6.acsta.net/r_1920_1080/img/f6/bd/f6bd0c5210da30eeffb4c3189483fc31.jpg',
+                                'genre' => 'Scince-Fiction',
+                                'synopsis' => '1985. Le jeune Marty McFly mène une existence anonyme auprès de sa petite amie Jennifer, seulement troublée par sa famille en crise et un proviseur qui serait ravi de l\'expulser du lycée. Ami de l\'excentrique professeur Emmett Brown, il l\'accompagne un soir tester sa nouvelle expérience : le voyage dans le temps via une DeLorean modifiée. La démonstration tourne mal : des trafiquants d\'armes débarquent et assassinent le scientifique. Marty se réfugie dans la voiture et se retrouve transporté en 1955. Là, il empêche malgré lui la rencontre de ses parents, et doit tout faire pour les remettre ensemble, sous peine de ne pouvoir exister...',
+                                'country' => 'USA',
+                                'support' => 'Blu-ray 4K',
+                                'releaseDate' => '10/30/1985',
+                                'trailer' => 'https://www.youtube.com/embed/cU5BREZ9ke0',
+                                'duration' => '116'                   
+        ],
+        'C\'est arrivé près de chez vous' => [
+                                'poster' => 'https://fr.web.img5.acsta.net/r_1920_1080/medias/nmedia/18/62/94/56/19172299.jpg',
+                                'genre' => 'Comédie',
+                                'synopsis' => 'Faux documentaire où une équipe de journalistes suit Ben, un tueur, qui s\'attaque plus particulièrement aux personnes âgées et aux personnes de classes moyennes. Peu à peu les journalistes vont prendre part aux crimes de Ben.',
+                                'country' => 'Belgique',
+                                'support' => 'Blu-ray',
+                                'releaseDate' => '11/04/1992',
+                                'trailer' => 'https://www.youtube.com/embed/eAy9QFJbFEs',
+                                'duration' => '92'                   
+        ],
+        'Le vélo de Ghislain Lambert' => [
+                                'poster' => 'https://fr.web.img6.acsta.net/r_1920_1080/medias/nmedia/00/02/32/78/velos.jpg',
+                                'genre' => 'Comédie',
+                                'synopsis' => 'Au milieu des années 70, Ghislain Lambert, né le même jour qu\'Eddy Merckx avec huit minutes d\'écart, est un coureur cycliste belge dont l\'ambition est de devenir un champion. Il parvient à intégrer une grande équipe mais comme porteur d\'eau. Déterminé dans son rêve de victoire et de gloire sportive, Ghislain Lambert attend patiemment son tour.',
+                                'country' => 'France',
+                                'support' => 'DVD',
+                                'releaseDate' => '03/28/2018',
+                                'trailer' => 'https://www.youtube.com/embed/A4z9eHm-dgY',
+                                'duration' => '119'                   
+        ],
     ];
 
     public function getDependencies()
