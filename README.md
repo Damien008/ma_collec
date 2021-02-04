@@ -39,4 +39,5 @@ Travail effectué :
 
 - CSS et mise en forme
 
+- mise en place upload images
 
