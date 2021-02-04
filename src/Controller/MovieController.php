@@ -100,6 +100,8 @@ class MovieController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($movie);
             $entityManager->flush();
+
+            
         }
 
         return $this->redirectToRoute('movie_index');

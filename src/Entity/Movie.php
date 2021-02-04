@@ -27,14 +27,14 @@ class Movie
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $poster;
+    private ?string $poster;
 
     /**
-      * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
-      * @var File
-      */
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var File
+     */
     private $posterFile;
 
     /**
@@ -207,12 +207,13 @@ class Movie
         return $this;
     }
 
-    public function setPosterFile(File $posterFile = null)
+    public function setPosterFile(File $posterFile = null):Movie
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {
             $this->updatedAt = new DateTime('now');
-    }
+        }
+        return $this;
     }
 
     public function getPosterFile(): ?File

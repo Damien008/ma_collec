@@ -47,9 +47,9 @@ class MovieType extends AbstractType
             ->add('support', ChoiceType::class, [
                 'choices' => [
                     'DVD' => 'DVD',
-                    'Blu-Ray' => 'Blu-Ray',
-                    'Blu-Ray 4K' => 'Blu-Ray 4K',
-                    'Blu-Ray 3D' => 'Blu-Ray 3D',
+                    'Blu-ray' => 'Blu-ray',
+                    'Blu-ray 4K' => 'Blu-ray 4K',
+                    'Blu-ray 3D' => 'Blu-ray 3D',
                     'Divx' => 'Divx',
                 ]
             ])
