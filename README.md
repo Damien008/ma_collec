@@ -29,6 +29,7 @@ Travail effectué :
   https://user-images.githubusercontent.com/71085005/107003664-6eafd980-678d-11eb-9995-5ce77c151a86.jpg
 - Création des wireframe
   https://user-images.githubusercontent.com/71085005/107003813-acacfd80-678d-11eb-8621-6c5522394957.jpg
+  https://user-images.githubusercontent.com/71085005/107003888-c4848180-678d-11eb-911f-936fe9ecd04e.jpg
 
 - Création de l'entité User
 - Crétion de la fonction de Login et Logout
