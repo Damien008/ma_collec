@@ -26,6 +26,7 @@ Pour charger la base de données :
 Travail effectué :
 
 - Création du MCD
+  https://user-images.githubusercontent.com/71085005/107003664-6eafd980-678d-11eb-9995-5ce77c151a86.jpg
 - Création des wireframe
 
 - Création de l'entité User
