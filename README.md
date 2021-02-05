@@ -25,6 +25,9 @@ Pour charger la base de données :
 
 Travail effectué :
 
+- Création du MCD
+- Création des wireframe
+
 - Création de l'entité User
 - Crétion de la fonction de Login et Logout
 - Création du formulaire de connexion et d'enregistrement d'un nouvel utilisateur
