@@ -47,3 +47,7 @@ Travail effectué :
 
 - mise en place upload images
 
+- l'utilisateur connecté voit seulement SES films et peut seulement rechercher dans SES films
+
+- changement du nom du dossier de SeacrhMovie de Service en Data, puisqu'il va seulement stocker des données
+

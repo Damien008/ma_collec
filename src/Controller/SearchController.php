@@ -2,7 +2,8 @@
 
 namespace App\Controller;
 
-use App\Service\SearchMovie;
+
+use App\Data\SearchMovie;
 use App\Form\SearchMovieType;
 use App\Repository\MovieRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +23,7 @@ class SearchController extends AbstractController
         $searchForm->handleRequest($request);
 
         if ($searchForm->isSubmitted() && $searchForm->isValid()) {
-            $movies = $movieRepository->searchMovie($search);
+            $movies = $movieRepository->searchMovie($search, $this->getUser());
         } else {
             $movies = null;
         }

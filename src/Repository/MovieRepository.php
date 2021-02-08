@@ -2,10 +2,11 @@
 
 namespace App\Repository;
 
+use App\Entity\User;
 use App\Entity\Movie;
-use App\Service\SearchMovie;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Data\SearchMovie;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Movie|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,9 +21,12 @@ class MovieRepository extends ServiceEntityRepository
         parent::__construct($registry, Movie::class);
     }
 
-    public function searchMovie(SearchMovie $search): array
+    public function searchMovie(SearchMovie $search, User $user): array
     {
-        $query = $this->createQueryBuilder('m');
+        $query = $this->createQueryBuilder('m')
+            ->innerJoin('m.owner', 'u')
+            ->where('u = :user')
+            ->setParameter('user', $user);
 
         if (!empty($search->genre)) {
             $query = $query
@@ -45,13 +49,28 @@ class MovieRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
-    public function findLikeTitle(string $name)
+    public function findLikeTitle(string $name, User $user)
     {
         $query = $this->createQueryBuilder('m')
-            ->where('m.title LIKE :name')
+            ->innerJoin('m.owner', 'u')
+            ->where('u = :user')
+            ->setParameter('user', $user)
+            ->andWhere('m.title LIKE :name')
             ->setParameter('name', $name . '%')
             ->orderBy('m.title', 'ASC');
 
         return $query->getQuery()->getResult();
     }
+
+    public function findMoviesByUser(User $user)
+    {
+        $query = $this->createQueryBuilder('m')
+            ->innerJoin('m.owner', 'u')
+            ->where('u = :user')
+            ->setParameter('user', $user)
+            ->orderBy('m.title', 'ASC');
+
+        return $query->getQuery()->getResult();
+    }
 }
+
