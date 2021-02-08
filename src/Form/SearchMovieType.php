@@ -3,7 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Movie;
-use App\Service\SearchMovie;
+
+use App\Data\SearchMovie;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -24,6 +25,7 @@ class SearchMovieType extends AbstractType
                     'Comédie' => 'Comédie',
                     'Western' => 'Western',
                     'Horreur' => 'Horreur',
+                    'Guerre' => 'Guerre',
                     'Policier' => 'Policier',
                     'Catastrophe' => 'Catastrophe',
                     'Action' => 'Action',

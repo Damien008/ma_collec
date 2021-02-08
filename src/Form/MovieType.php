@@ -34,6 +34,7 @@ class MovieType extends AbstractType
                     'Comédie' => 'Comédie',
                     'Western' => 'Western',
                     'Horreur' => 'Horreur',
+                    'Guerre' => 'Guerre',
                     'Policier' => 'Policier',
                     'Catastrophe' => 'Catastrophe',
                     'Action' => 'Action',
