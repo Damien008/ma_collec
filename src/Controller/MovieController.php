@@ -26,9 +26,9 @@ class MovieController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData()['search'];
-            $movies = $movieRepository->findLikeTitle($search);
+            $movies = $movieRepository->findLikeTitle($search, $this->getUser());
         } else {
-            $movies = $movieRepository->findAll();
+            $movies = $movieRepository->findMoviesByUser($this->getUser());
         }
 
         return $this->render('movie/index.html.twig', [
