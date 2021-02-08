@@ -240,14 +240,8 @@ ul {
 .movieBlu img {
     width: 200px;
     height: 300px;
-    padding-top: 5%;   
-}
-
-.movieBlu a {
-    
-    box-shadow: 5px 5px 5px rgba(29, 29, 168, 0.685);
-    background-color: rgba(29, 29, 168, 0.685);
-    border-radius: 5%;
+    border: rgba(29, 29, 168, 0.685) solid 10px;
+    border-radius: 0% 5% 0% 5%;
 }
 
 .movieDvd {
@@ -259,14 +253,8 @@ ul {
 .movieDvd img {
     width: 200px;
     height: 300px;
-    padding-top: 5%; 
-}
-
-.movieDvd a {
-    
-    box-shadow: 5px 5px 5px rgb(177, 31, 31);
-    background-color: rgb(177, 31, 31);
-    border-radius: 5%;
+    border: rgb(177, 31, 31) solid 10px;
+    border-radius: 0% 5% 0% 5%;
 }
 
 .movie4K {
@@ -278,14 +266,8 @@ ul {
 .movie4K img {
     width: 200px;
     height: 300px;
-    padding-top: 5%; 
-}
-
-.movie4K a {
-    
-    box-shadow: 5px 5px 5px black;
-    background-color: black;
-    border-radius: 5%;
+    border: black solid 10px;
+    border-radius: 0% 5% 0% 5%;
 }
 
 .movie3D {
@@ -297,14 +279,8 @@ ul {
 .movie3D img {
     width: 200px;
     height: 300px;
-    padding-top: 5%; 
-}
-
-.movie3D a {
-    
-    box-shadow: 5px 5px 5px rgba(241, 150, 13, 0.685);
-    background-color: rgba(241, 150, 13, 0.685);
-    border-radius: 5%;
+    border: rgba(241, 150, 13, 0.685) solid 10px;
+    border-radius: 0% 5% 0% 5%;
 }
 
 .movieDivx {
@@ -316,14 +292,8 @@ ul {
 .movieDivx img {
     width: 200px;
     height: 300px;
-    padding-top: 5%; 
-}
-
-.movieDivx a {
-    
-    box-shadow: 5px 5px 5px rgba(24, 134, 29, 0.685);
-    background-color: rgba(24, 134, 29, 0.685);
-    border-radius: 5%;
+    border: rgba(24, 134, 29, 0.685) solid 10px;
+    border-radius: 0% 5% 0% 5%;
 }
 
 .blockSearchTitle {
@@ -394,8 +364,7 @@ ul {
     
     .movieBlu img {
         width: 300px;
-        height: 450px;
-        padding-top: 5%;   
+        height: 450px;   
     }
  
     .movieDvd {
@@ -404,8 +373,7 @@ ul {
     
     .movieDvd img {
         width: 300px;
-        height: 450px;
-        padding-top: 5%; 
+        height: 450px; 
     }
   
     .movie4K {
@@ -414,8 +382,7 @@ ul {
     
     .movie4K img {
         width: 300px;
-        height: 450px;
-        padding-top: 5%; 
+        height: 450px; 
     }
     
     .movie3D {
@@ -424,17 +391,18 @@ ul {
     
     .movie3D img {
         width: 300px;
-        height: 450px;
-        padding-top: 5%; 
+        height: 450px; 
     }
     
     .movieDivx {
         padding: 2%;
     }
     
-    .movieDivx img {
-        padding-top: 5%; 
+    .movieDivx img { 
+        width: 300px;
+        height: 450px; 
     }
+
 
     //HOME
     .blockBienvenue {
