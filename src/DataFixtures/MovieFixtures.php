@@ -57,7 +57,7 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
         ],
         'Ready Player One' => [
                             'poster' => 'ready.jpg',
-                            'genre' => 'Scince-Fiction',
+                            'genre' => 'Science-Fiction',
                             'synopsis' => '2045. Le monde est au bord du chaos. Les êtres humains se réfugient dans l\'OASIS, univers virtuel mis au point par le brillant et excentrique James Halliday. Avant de disparaître, celui-ci a décidé de léguer son immense fortune à quiconque découvrira l\'œuf de Pâques numérique qu\'il a pris soin de dissimuler dans l\'OASIS. L\'appât du gain provoque une compétition planétaire. Mais lorsqu\'un jeune garçon, Wade Watts, qui n\'a pourtant pas le profil d\'un héros, décide de participer à la chasse au trésor, il est plongé dans un monde parallèle à la fois mystérieux et inquiétant…',
                             'country' => 'USA',
                             'support' => 'Blu-ray 4K',
@@ -67,7 +67,7 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
         ],
         'Les 4 Fantastiques' => [
                             'poster' => 'fantastique.jpg',
-                            'genre' => 'Scince-Fiction',
+                            'genre' => 'Science-Fiction',
                             'synopsis' => 'Reed Richards s\'apprête à explorer le cœur du cosmos pour percer les mystères de nos origines. A ses côtés : l\'astronaute Ben Grimm, son ex-compagne Sue Storm et le pilote casse-cou Jimmy Storm.
                             Au cours de leur mission, la station spatiale s\'engouffre dans un nuage de particules radioactives. Les codes génétiques des quatre astronautes en sont altérés à jamais...',
                             'country' => 'USA',
@@ -101,7 +101,7 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
         ],
         'Batman V Superman' => [
                                 'poster' => 'batmanvsuperman.jpg',
-                                'genre' => 'Scince-Fiction',
+                                'genre' => 'Science-Fiction',
                                 'synopsis' => 'Craignant que Superman n\'abuse de sa toute-puissance, le Chevalier noir décide de l\'affronter : le monde a-t-il davantage besoin d\'un super-héros aux pouvoirs sans limite ou d\'un justicier à la force redoutable mais d\'origine humaine ? Pendant ce temps-là, une terrible menace se profile à l\'horizon…',
                                 'country' => 'USA',
                                 'support' => 'Blu-ray',
@@ -111,7 +111,7 @@ class MovieFixtures extends Fixture implements DependentFixtureInterface
         ],
         'Retour vers le futur' => [
                                 'poster' => 'retour.jpg',
-                                'genre' => 'Scince-Fiction',
+                                'genre' => 'Science-Fiction',
                                 'synopsis' => '1985. Le jeune Marty McFly mène une existence anonyme auprès de sa petite amie Jennifer, seulement troublée par sa famille en crise et un proviseur qui serait ravi de l\'expulser du lycée. Ami de l\'excentrique professeur Emmett Brown, il l\'accompagne un soir tester sa nouvelle expérience : le voyage dans le temps via une DeLorean modifiée. La démonstration tourne mal : des trafiquants d\'armes débarquent et assassinent le scientifique. Marty se réfugie dans la voiture et se retrouve transporté en 1955. Là, il empêche malgré lui la rencontre de ses parents, et doit tout faire pour les remettre ensemble, sous peine de ne pouvoir exister...',
                                 'country' => 'USA',
                                 'support' => 'Blu-ray 4K',
