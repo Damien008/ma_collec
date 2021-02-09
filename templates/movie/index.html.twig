@@ -3,58 +3,60 @@
 {% block title %}Movie index{% endblock %}
 
 {% block body %}
-    {% if app.user %}
-        <div class="blockSearchTitle">
-            {{ form_start(form) }}
-                <div class="searchTitleItem">
-                    {{ form_row(form.search) }}
-                </div>
-                <div class="searchTitleItem">
-                    {{ form_row(form.save) }}
-                </div>
-            {{ form_end(form) }}
-        </div>
-        
-        <div class="blockMovie">   
-            {% for movie in movies %}
-                {% if movie.support == 'Blu-ray' %}
-                    <div class="movieBlu">
-                        <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ '/uploads/' ~ movie.poster  }}">
-                        </a>
+    <div class="blockIndex">
+        {% if app.user %}
+            <div class="blockSearchTitle">
+                {{ form_start(form) }}
+                    <div class="searchTitleItem">
+                        {{ form_row(form.search) }}
                     </div>
-                {% endif %}
-                {% if movie.support == 'DVD' %}
-                    <div class="movieDvd">
-                        <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ '/uploads/' ~ movie.poster  }}">
-                        </a>
+                    <div class="searchTitleItem">
+                        {{ form_row(form.save) }}
                     </div>
-                {% endif %}
-                {% if movie.support == 'Blu-ray 4K' %}
-                    <div class="movie4K">
-                        <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ '/uploads/' ~ movie.poster  }}">
-                        </a> 
-                    </div>
-                {% endif %}
-                {% if movie.support == 'Blu-ray 3D' %}
-                    <div class="movie3D">
-                        <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ '/uploads/' ~ movie.poster  }}">
-                        </a> 
-                    </div>
-                {% endif %}
-                {% if movie.support == 'Divx' %}
-                    <div class="movieDivx">
-                        <a href="{{ path('movie_show', {'id': movie.id}) }}">
-                            <img src="{{ '/uploads/' ~ movie.poster  }}">
-                        </a> 
-                    </div>
-                {% endif %}   
-            {% endfor %}
-        </div>
-    {% else %}
-        <p>Veuillez créer un compte pour commencer à créer votre Vidéothèque<p>
-    {% endif %}   
+                {{ form_end(form) }}
+            </div>
+            
+            <div class="blockMovie">   
+                {% for movie in movies %}
+                    {% if movie.support == 'Blu-ray' %}
+                        <div class="movieBlu">
+                            <a href="{{ path('movie_show', {'id': movie.id}) }}">
+                                <img src="{{ '/uploads/' ~ movie.poster  }}">
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% if movie.support == 'DVD' %}
+                        <div class="movieDvd">
+                            <a href="{{ path('movie_show', {'id': movie.id}) }}">
+                                <img src="{{ '/uploads/' ~ movie.poster  }}">
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% if movie.support == 'Blu-ray 4K' %}
+                        <div class="movie4K">
+                            <a href="{{ path('movie_show', {'id': movie.id}) }}">
+                                <img src="{{ '/uploads/' ~ movie.poster  }}">
+                            </a> 
+                        </div>
+                    {% endif %}
+                    {% if movie.support == 'Blu-ray 3D' %}
+                        <div class="movie3D">
+                            <a href="{{ path('movie_show', {'id': movie.id}) }}">
+                                <img src="{{ '/uploads/' ~ movie.poster  }}">
+                            </a> 
+                        </div>
+                    {% endif %}
+                    {% if movie.support == 'Divx' %}
+                        <div class="movieDivx">
+                            <a href="{{ path('movie_show', {'id': movie.id}) }}">
+                                <img src="{{ '/uploads/' ~ movie.poster  }}">
+                            </a> 
+                        </div>
+                    {% endif %}   
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Veuillez créer un compte pour commencer à créer votre Vidéothèque<p>
+        {% endif %}
+    </div>  
 {% endblock %}

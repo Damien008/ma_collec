@@ -3,44 +3,46 @@
 {% block title %}Edit Movie{% endblock %}
 
 {% block body %}
-    {% if app.user %}
-        <div class="blockNew">
-            <h1 class="newTitle">Editer la fiche de "{{movie.title}}"</h1>
-            <div class="newForm">
-                {{ form_start(form)}}
+    <div class="blockEdit">
+        {% if app.user %}
+            <div class="blockNew">
+                <h1 class="newTitle">Editer la fiche de "{{movie.title}}"</h1>
+                <div class="newForm">
+                    {{ form_start(form)}}
+                        <div class="newItem">
+                            {{ form_row(form.title) }}
+                        </div>
                     <div class="newItem">
-                        {{ form_row(form.title) }}
-                    </div>
-                   <div class="newItem">
-                        {{ form_row(form.releaseDate) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.genre) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.posterFile) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.synopsis) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.country) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.support) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.duration) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.trailer) }}
-                    </div>
-                    <div class="newItem">
-                        {{ form_row(form.save) }}
-                    </div>
-                {{ form_end(form)}}
-        </div>
-    {% else %}
-        <p>Veuillez créer un compte pour commencer à créer votre Vidéothèque<p>
-    {% endif %}
+                            {{ form_row(form.releaseDate) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.genre) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.posterFile) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.synopsis) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.country) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.support) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.duration) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.trailer) }}
+                        </div>
+                        <div class="newItem">
+                            {{ form_row(form.save) }}
+                        </div>
+                    {{ form_end(form)}}
+            </div>
+        {% else %}
+            <p>Veuillez créer un compte pour commencer à créer votre Vidéothèque<p>
+        {% endif %}
+    </div>
 {% endblock %}
