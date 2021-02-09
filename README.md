@@ -51,3 +51,6 @@ Travail effectué :
 
 - changement du nom du dossier de SeacrhMovie de Service en Data, puisqu'il va seulement stocker des données
 
+- changement CSS.
+
+- position fixe de la navbar
