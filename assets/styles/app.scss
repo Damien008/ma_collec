@@ -19,6 +19,18 @@ header {
     display: flex;
     flex-direction: column;
     height: 30vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #394651;
+}
+
+.blockIndex, .blockShow, .blockSearchIndex {
+    margin-top: 30vh;
+}
+
+.blockNew {
+    margin-top: 15vh;
 }
 
 a {
